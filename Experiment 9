@@ -1,0 +1,16 @@
+  area program, code, readonly
+  entry
+main
+  mov r8, #5
+  ldr r0, value0
+  ldr r1, [r0], #4
+loop
+  ldr r2, [r0], #4
+  cmp r1, r2
+  movgt r3, r2
+  mov r1, r3
+  subs r8, r8, #01
+  bne loop
+  area program, data, READONLY
+value0 dcd &40000000
+  end
