@@ -11,37 +11,24 @@ connection of 7-seg
 
 int main()
 {
-int a,b,c,d,e;
+int a;
 unsigned char arr[] = {0xbf, 0x86, 0xdb, 0xcf, 0xe6, 0xed, 0xfd, 0x87, 0xff, 0xef};
 IODIR0 = 0xffffffff;
 while(1)
  {  
-for(a=0;a<=9;a++)
- {  
-  for(b=0;b<=9;b++)
-  {  
-    for(c=0;c<=9;c++)
-    {
-	  for(d=0;d<=9;d++)
-	  {  
-	    for(e=0;e<=50;e++)
-	    {
 	          IOCLR0 = 0xFFFFFFFF;
-	          IOSET0 = arr[d]<<16 | 0x0100;
+	          IOSET0 = arr[6]<<16 | 0x0800;
 	          delay_ms(2);
 	          IOCLR0 = 0xFFFFFFFF;
-	          IOSET0 = arr[c]<<16 | 0x0200;
+	          IOSET0 = arr[1]<<16 | 0x0400;
 	          delay_ms(2);
 	          IOCLR0 = 0xFFFFFFFF;
-	          IOSET0 = arr[b]<<16 | 0x0400;
+	          IOSET0 = arr[9]<<16 | 0x0200;
 	          delay_ms(2);
 	          IOCLR0 = 0xFFFFFFFF;
-	          IOSET0 = arr[a]<<16 | 0x0800;
+	          IOSET0 = arr[0]<<16 | 0x0100;
 	          delay_ms(2);      
 		 }
-       }
-	 }
-   }
- }
 }
-}
+//unsigned char arr[] = {0xbf, 0x86, 0xdb, 0xcf, 0xe6, 0xed, 0xfd, 0x87, 0xff, 0xef};
+
